@@ -8,15 +8,15 @@ Uses a server/client framework using TCP sockets so players can be written in yo
 
 In one terminal, launch the server, host and port:
 
-`$ supervise.py some.host.here 12345`
+`$ python3 supervise.py some.host.here 12345`
 
 In another terminal, connect player 1:
 
-`$ clients/python/checkers.py some.host.here 12345`
+`$ python3 clients/python/checkers.py some.host.here 12345`
 
 In another terminal, connect player 2:
 
-`$ clients/python/checkers.py some.host.here 12345`
+`$ python3 clients/python/checkers.py some.host.here 12345`
 
 ## API
 
@@ -89,9 +89,14 @@ Steps (iv) and (v) are repeated until the game is over.
     <td>A 9 char-long string. Char position runs from left to right, top to bottom (e.g. position 4 represents the second square from the left in the second row from the top (the middle square)). Spaces (' ') represent empty squares, 'x' represents player 1, 'o' represents player 2.</td>
     <td>A string encapsulating an int with the index of the square the player wants to put its next mark in (e.g. "2").</td>
   </tr>
+  <tr>
+    <td>connect four</td>
+    <td>A 42 char-long string. Char position runs from left to right, top to bottom (e.g. position 0 represents the upper-left square, 18 represents the middle square in the third row (from the top). Spaces (' ') represent empty squares, 'x' represents player 1, 'o' represents player 2.</td>
+    <td>A string between 0 and 6 inclusive, encapsulating an integer with the index of the column where the player wants to drop her next piece.</td>
+  </tr>
 </table>
 
-connectfour and chess are in the pipeline, let us know if you would like to see them implemented.
+chess is in the pipeline, let us know if you would like to see it implemented.
 
 ## Test Suite
 
@@ -99,18 +104,14 @@ To run the test suite:
 
 (i) Start the game server in one terminal:
 
-`$ supervise.py 34.23.54.34 12345`
+`$ python3 supervise.py 34.23.54.34 12345`
 
-(ii) In another terminal, generate the test cases:
+(ii) In another terminal, run the test:
 
-`$ test/gen_cases.py`
-
-(iii) then run the tests:
-
-`$ test/test.py`
+`$ python3 test/test.py`
 
 ## Wish List
-* Handle multiple jumps in one turn 
+* Handle multiple checkers jumps in one turn 
 * Write clients in different languages
 * Improve the test suite
 * Documentation
