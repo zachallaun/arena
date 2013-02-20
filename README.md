@@ -8,7 +8,7 @@ Uses a server/client framework using TCP sockets so players can be written in yo
 
 In one terminal, launch the server, host and port:
 
-`$ plumbing/supervisor.py some.host.here 12345`
+`$ supervise.py some.host.here 12345`
 
 In another terminal, connect player 1:
 
@@ -99,7 +99,7 @@ To run the test suite:
 
 (i) Start the game server in one terminal:
 
-`$ plumbing/supervisor.py 34.23.54.34 12345`
+`$ supervise.py 34.23.54.34 12345`
 
 (ii) In another terminal, generate the test cases:
 
